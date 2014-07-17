@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if mountpoint -q /target; then
+  echo "Installing nsinit to /target"
+  cp -f /usr/local/bin/nsinit /target/
+  echo "Installing docker-nsinit to /target"
+  cp -f /usr/local/bin/docker-nsinit /target/
+else
+  echo "/target is not a mountpoint."
+  echo "You can either:"
+  echo "- re-run this container with -v /usr/local/bin:/target"
+  echo "- extract the nsinit binary (located at /usr/local/bin/nsinit)"
+fi
