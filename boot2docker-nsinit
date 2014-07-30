@@ -1,0 +1,23 @@
+#!/bin/sh
+
+tce-load -wil compiletc 2> /dev/null
+
+echo "Installing go"
+cd /tmp
+curl -sOL http://golang.org/dl/go1.3.linux-386.tar.gz
+cd /var/lib/boot2docker
+sudo tar zxf /tmp/go1.3.linux-386.tar.gz
+export GOROOT=/var/lib/boot2docker/go
+export PATH=$PATH:$GOROOT/bin
+
+echo "Installing nsinit"
+cd $HOME
+export GOPATH=$HOME/go
+go get github.com/docker/libcontainer/nsinit/nsinit
+sudo cp -f $GOPATH/bin/nsinit /usr/local/bin/
+
+echo "Installing docker-nsinit"
+cd $HOME
+curl -sOL https://raw.githubusercontent.com/YungSang/docker-attach/master/docker-nsinit
+chmod +x docker-nsinit
+sudo mv -f docker-nsinit /usr/local/bin/

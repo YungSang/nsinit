@@ -8,16 +8,16 @@ An nsinit tool box
 
 ## How to install
 
+### for Intel 64 bits platforms
+
 ```
 $ docker run --rm -v /usr/local/bin:/target yungsang/nsinit
 ```
 
-### With Vagrant
+### for boot2docker
 
 ```
-$ git clone https://github.com/YungSang/nsinit.git
-$ cd nsinit
-$ vagrant up
+docker@boot2docker:~$ curl -sSL https://raw.githubusercontent.com/YungSang/nsinit/master/boot2docker-nsinit | sh
 ```
 
 ## License
