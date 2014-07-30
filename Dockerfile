@@ -4,12 +4,9 @@ RUN apt-get update -q && apt-get install -qy curl build-essential golang git
 
 ENV GOPATH /go
 
-ENV VERSION v1.1.0
+RUN go get -d github.com/docker/libcontainer/nsinit
 
-RUN go get -d github.com/docker/libcontainer/nsinit && \
-    cd $GOPATH/src/github.com/docker/libcontainer && \
-    git checkout -B nsinit $VERSION && \
-    cd $GOPATH/src/github.com/docker/libcontainer/nsinit && \
+RUN cd $GOPATH/src/github.com/docker/libcontainer/nsinit/nsinit && \
     go install . && \
     cp -f $GOPATH/bin/nsinit /usr/local/bin/
 
