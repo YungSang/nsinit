@@ -13,7 +13,7 @@ export PATH=$PATH:$GOROOT/bin
 echo "Installing nsinit"
 cd $HOME
 export GOPATH=$HOME/go
-go get github.com/docker/libcontainer/nsinit/nsinit
+go get github.com/docker/libcontainer/nsinit
 sudo cp -f $GOPATH/bin/nsinit /usr/local/bin/
 
 echo "Installing docker-nsinit"
