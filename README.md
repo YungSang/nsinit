@@ -14,6 +14,12 @@ An nsinit tool box
 $ docker run --rm -v /usr/local/bin:/target yungsang/nsinit
 ```
 
+### for CoreOS (>= 379.2.0)
+
+```
+$ docker run --rm -v /opt/bin:/target yungsang/nsinit
+```
+
 ### for boot2docker
 
 ```
