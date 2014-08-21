@@ -4,9 +4,9 @@ tce-load -wil compiletc 2> /dev/null
 
 echo "Installing go"
 cd /tmp
-curl -sOL http://golang.org/dl/go1.3.linux-386.tar.gz
+curl -sOL http://golang.org/dl/go1.3.1.linux-386.tar.gz
 cd /var/lib/boot2docker
-sudo tar zxf /tmp/go1.3.linux-386.tar.gz
+sudo tar zxf /tmp/go1.3.1.linux-386.tar.gz
 export GOROOT=/var/lib/boot2docker/go
 export PATH=$PATH:$GOROOT/bin
 
